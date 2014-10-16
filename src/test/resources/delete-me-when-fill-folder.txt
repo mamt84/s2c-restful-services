@@ -1,0 +1,1 @@
+This trick is required because git doesn't allow to commit empty directories
