@@ -8,7 +8,6 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@MappedSuperclass
 public abstract class PersistentEntity implements Serializable, Cloneable {
 
 	private static final long serialVersionUID = -7848669167086246023L;
@@ -16,6 +15,7 @@ public abstract class PersistentEntity implements Serializable, Cloneable {
 	@Id
 	private long id;
 
+    //there is a suggested way with Mongo + Spring Data to do the auditing
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date created;
 
