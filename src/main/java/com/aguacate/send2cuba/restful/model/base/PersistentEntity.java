@@ -16,6 +16,8 @@ public abstract class PersistentEntity implements Serializable, Cloneable {
 	@Id
 	private long id;
 
+    //there is a suggested way with Mongo + Spring Data to do the auditing
+
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date created;
 
