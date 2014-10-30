@@ -48,6 +48,12 @@ public abstract class PersistentEntity implements Serializable, Cloneable {
 		this.modified = modified;
 	}
 
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+
+		return super.clone();
+	}
+
 	// TODO: Define entity to dto policy, either using reflection or on each
 	// entity
 }
