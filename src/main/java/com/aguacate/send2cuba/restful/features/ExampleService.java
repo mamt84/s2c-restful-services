@@ -1,4 +1,4 @@
-package com.aguacate.send2cuba.restful;
+package com.aguacate.send2cuba.restful.features;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@EnableAutoConfiguration
 public class ExampleService {
 
 	@RequestMapping("/")
@@ -14,7 +13,5 @@ public class ExampleService {
 		return "Hello spring boot world";
 	}
 
-	public static void main(String[] args) {
-		SpringApplication.run(ExampleService.class);
-	}
+
 }
