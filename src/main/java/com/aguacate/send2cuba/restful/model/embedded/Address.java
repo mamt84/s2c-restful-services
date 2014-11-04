@@ -3,7 +3,7 @@ package com.aguacate.send2cuba.restful.model.embedded;
 import java.io.Serializable;
 
 //TODO: Might be susceptible to use extension pattern if we want to be able to store multi-country addresses
-//@Embeddable TODO: maikel: check if makes sense to use this anotation alog with spring-data-mongodb
+//@Embeddable TODO: maikel: check if makes sense to use this annotation alog with spring-data-mongodb, same with the others
 public class Address implements Serializable{
 
 	private static final long serialVersionUID = -3310462711949420653L;

@@ -1,8 +1,6 @@
 package com.aguacate.send2cuba.restful.model.embedded;
 
-import javax.persistence.Embeddable;
 
-@Embeddable
 public class PersonalContactInformation extends ProviderContactInformation {
 
 	private static final long serialVersionUID = -2851557218195956023L;

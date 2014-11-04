@@ -1,8 +1,7 @@
 package com.aguacate.send2cuba.restful.model.extension;
 
-import javax.persistence.Transient;
-
 import com.aguacate.send2cuba.restful.model.base.PersistentEntity;
+import org.springframework.data.annotation.Transient;
 
 public class AbstractExtension<E extends PersistentEntity> extends
 		PersistentEntity {
