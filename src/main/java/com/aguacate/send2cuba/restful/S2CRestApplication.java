@@ -4,7 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
 
 /**
@@ -17,9 +16,9 @@ import org.springframework.data.mongodb.config.EnableMongoAuditing;
 @EnableMongoAuditing
 @EnableAutoConfiguration
 @ComponentScan
-public class Send2CubaRestApplication {
+public class S2CRestApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Send2CubaRestApplication.class);
+        SpringApplication.run(S2CRestApplication.class);
     }
 }
