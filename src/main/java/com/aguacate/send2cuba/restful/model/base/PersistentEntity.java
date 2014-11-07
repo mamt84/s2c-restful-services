@@ -13,7 +13,7 @@ public abstract class PersistentEntity implements Serializable, Cloneable {
 	private static final long serialVersionUID = -7848669167086246023L;
 
 	@Id
-	private Long id;
+	private String id;
 
     //there is a suggested way with Mongo + Spring Data to do the auditing
 
@@ -25,11 +25,11 @@ public abstract class PersistentEntity implements Serializable, Cloneable {
     @LastModifiedDate
     private Date modified;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

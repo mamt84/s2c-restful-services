@@ -14,17 +14,22 @@ import java.util.List;
  * Created by maikel on 11/6/2014.
  */
 @Service
-public class PermisoServiceImpl implements PermissionService {
+public class PermissionServiceImpl implements PermissionService {
 
     @Autowired
     PermissionRepository permissionRepository;
 
     @Override
     public List<PermissionDto> findPermissionsByName(String name) {
-        return getPermissionToDtoMapper().mapCollectionToDto(permissionRepository.findByName(name));
+        return getPermissionMapper().mapCollectionToDto(permissionRepository.findByName(name));
     }
 
-    PermissionMapper getPermissionToDtoMapper(){
+    @Override
+    public void save(PermissionDto permissionDto) {
+        permissionRepository.save(getPermissionMapper().mapToEntity(permissionDto));
+    }
+
+    PermissionMapper getPermissionMapper(){
         return new PermissionMapper();
     };
 

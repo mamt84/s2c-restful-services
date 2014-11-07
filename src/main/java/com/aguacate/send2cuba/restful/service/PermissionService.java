@@ -10,4 +10,5 @@ import java.util.List;
  */
 public interface PermissionService {
     public List<PermissionDto> findPermissionsByName(String name);
+    public void save(PermissionDto permissionDto);
 }
