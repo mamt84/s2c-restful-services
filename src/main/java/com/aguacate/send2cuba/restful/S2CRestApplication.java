@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.config.EnableMongoAuditing;
 //@ImportResource("classpath:config.xml") // just in case we need to configure something completely undoable using annotations
 @Configuration
 @EnableMongoAuditing
-@EnableAutoConfiguration
+@EnableAutoConfiguration(exclude = { org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration.class })
 @ComponentScan
 public class S2CRestApplication {
 

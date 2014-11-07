@@ -9,7 +9,7 @@ public abstract class BaseType extends PersistentEntity{
 
 	private static final long serialVersionUID = 3890272341606326295L;
 
-	private String value;
+    private String value;
 
 
     public String getValue() {
