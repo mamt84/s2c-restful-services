@@ -1,6 +1,6 @@
-package com.aguacate.send2cuba.restful.features.service;
+package com.aguacate.send2cuba.restful.service;
 
-import com.aguacate.send2cuba.restful.features.dto.PermissionDto;
+import com.aguacate.send2cuba.restful.dto.PermissionDto;
 import com.aguacate.send2cuba.restful.model.user.Permission;
 
 import java.util.List;

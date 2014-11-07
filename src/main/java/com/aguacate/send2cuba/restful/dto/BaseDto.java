@@ -1,4 +1,4 @@
-package com.aguacate.send2cuba.restful.model.dto;
+package com.aguacate.send2cuba.restful.dto;
 
 import java.io.Serializable;
 

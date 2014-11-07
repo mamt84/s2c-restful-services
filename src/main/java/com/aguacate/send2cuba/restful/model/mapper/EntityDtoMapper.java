@@ -1,7 +1,7 @@
 package com.aguacate.send2cuba.restful.model.mapper;
 
+import com.aguacate.send2cuba.restful.dto.BaseDto;
 import com.aguacate.send2cuba.restful.model.base.PersistentEntity;
-import com.aguacate.send2cuba.restful.model.dto.BaseDto;
 
 public interface EntityDtoMapper<E extends PersistentEntity, D extends BaseDto> {
 

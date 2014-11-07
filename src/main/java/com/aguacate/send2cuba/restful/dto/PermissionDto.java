@@ -1,4 +1,4 @@
-package com.aguacate.send2cuba.restful.features.dto;
+package com.aguacate.send2cuba.restful.dto;
 
 /**
  * Created by maikel on 11/6/2014.

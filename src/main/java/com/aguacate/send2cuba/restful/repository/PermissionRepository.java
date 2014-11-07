@@ -1,4 +1,4 @@
-package com.aguacate.send2cuba.restful.features.repository;
+package com.aguacate.send2cuba.restful.repository;
 
 import com.aguacate.send2cuba.restful.model.user.Permission;
 import org.springframework.data.mongodb.repository.MongoRepository;
