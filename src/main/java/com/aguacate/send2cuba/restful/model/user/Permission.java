@@ -1,7 +1,8 @@
 package com.aguacate.send2cuba.restful.model.user;
 
-import com.aguacate.send2cuba.restful.model.base.PersistentEntity;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.aguacate.send2cuba.restful.model.base.PersistentEntity;
 
 //TODO: Should extend some sort of property or nomenclator
 //TODO: Maikel: I created a Nomenclator class but didn't like to extend Nomenclator on this class, I don't see this as a pure nomenclator
@@ -10,11 +11,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Permission extends PersistentEntity {
 
 	private static final long serialVersionUID = -4689895573618714531L;
-	private String name;
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
+	private String name;
 
     public String getName() {
         return name;

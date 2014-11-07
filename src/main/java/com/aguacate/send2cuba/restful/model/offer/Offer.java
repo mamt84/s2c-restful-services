@@ -6,4 +6,11 @@ public abstract class Offer extends PersistentEntity {
 
 	private static final long serialVersionUID = -2010632110634176528L;
 
+	private String description;
+
+	private boolean special;
+
+	private boolean active;
+
+	private Float price;
 }
