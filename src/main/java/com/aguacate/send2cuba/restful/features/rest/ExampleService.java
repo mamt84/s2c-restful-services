@@ -1,4 +1,4 @@
-package com.aguacate.send2cuba.restful.features;
+package com.aguacate.send2cuba.restful.features.rest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

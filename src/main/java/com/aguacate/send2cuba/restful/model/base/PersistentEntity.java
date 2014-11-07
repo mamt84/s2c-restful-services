@@ -1,6 +1,8 @@
 package com.aguacate.send2cuba.restful.model.base;
 
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -11,25 +13,27 @@ public abstract class PersistentEntity implements Serializable, Cloneable {
 	private static final long serialVersionUID = -7848669167086246023L;
 
 	@Id
-	private long id;
+	private Long id;
 
     //there is a suggested way with Mongo + Spring Data to do the auditing
 
 	//@Temporal(TemporalType.TIMESTAMP) TODO: temporary to see how is with mongo
-	private Date created;
+	@CreatedDate
+    private Date created;
 
     //@Temporal(TemporalType.TIMESTAMP) TODO: temporary to see how is with mongo
+    @LastModifiedDate
     private Date modified;
 
-    public long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Date getCreated() {
+    public Date getCreated() {
 		return created;
 	}
 

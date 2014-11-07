@@ -21,4 +21,5 @@ public class S2CRestApplication {
     public static void main(String[] args) {
         SpringApplication.run(S2CRestApplication.class);
     }
+
 }
