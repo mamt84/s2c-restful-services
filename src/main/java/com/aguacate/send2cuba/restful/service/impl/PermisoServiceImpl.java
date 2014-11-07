@@ -1,6 +1,7 @@
 package com.aguacate.send2cuba.restful.service.impl;
 
 import com.aguacate.send2cuba.restful.dto.PermissionDto;
+import com.aguacate.send2cuba.restful.model.mapper.PermissionToDtoMapper;
 import com.aguacate.send2cuba.restful.repository.PermissionRepository;
 import com.aguacate.send2cuba.restful.service.PermissionService;
 
@@ -20,8 +21,12 @@ public class PermisoServiceImpl implements PermissionService {
 
     @Override
     public List<PermissionDto> findPermissionsByName(String name) {
-        return null;
+        return getPermissionToDtoMapper().mapCollectionToDto(permissionRepository.findByName(name));
     }
+
+    PermissionToDtoMapper getPermissionToDtoMapper(){
+        return new PermissionToDtoMapper();
+    };
 
     public PermissionRepository getPermissionRepository() {
         return permissionRepository;

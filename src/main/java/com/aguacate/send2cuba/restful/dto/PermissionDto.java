@@ -3,7 +3,7 @@ package com.aguacate.send2cuba.restful.dto;
 /**
  * Created by maikel on 11/6/2014.
  */
-public class PermissionDto {
+public class PermissionDto extends BaseDto{
     public String value;
 
     public String getValue() {
