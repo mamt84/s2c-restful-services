@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
+import org.springframework.hateoas.config.EnableHypermediaSupport;
 
 /**
  * Created by maikel on 11/2/2014.

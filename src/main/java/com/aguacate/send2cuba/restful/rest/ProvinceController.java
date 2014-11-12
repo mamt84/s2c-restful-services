@@ -6,19 +6,20 @@ import com.aguacate.send2cuba.restful.service.ProvinceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.hateoas.Resource;
+import org.springframework.hateoas.Resources;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/backend")
-public class ProvinceRestController {
+public class ProvinceController {
 
     @Autowired
     ProvinceService provinceService;
 
-	@RequestMapping("/province/all")
+	@RequestMapping("/provinces")
 	public List<TypeDto> getAllProvinces() {
 		return provinceService.findAll();
 	}

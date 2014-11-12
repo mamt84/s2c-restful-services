@@ -6,5 +6,13 @@ public class BaseDto implements Serializable, Cloneable {
 
 	private static final long serialVersionUID = 86423278314073649L;
 
-	private long id;
+	private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }
