@@ -1,24 +1,19 @@
 package com.aguacate.send2cuba.restful.service;
 
-import com.aguacate.send2cuba.restful.MongoConfiguration;
-import com.aguacate.send2cuba.restful.S2CRestApplication;
-import com.aguacate.send2cuba.restful.dto.TypeDto;
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.List;
+import com.aguacate.send2cuba.restful.core.DataBaseIntegrationTest;
+import com.aguacate.send2cuba.restful.dto.TypeDto;
 
 /**
  * Created by maikel on 11/6/2014.
  */
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = {S2CRestApplication.class, MongoConfiguration.class})
-public class ProvinceServiceTest {
+public class ProvinceServiceTest extends DataBaseIntegrationTest {
 
     @Autowired
     ProvinceService provinceService;
