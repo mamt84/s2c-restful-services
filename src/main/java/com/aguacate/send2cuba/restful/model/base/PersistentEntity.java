@@ -1,6 +1,7 @@
 package com.aguacate.send2cuba.restful.model.base;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.Date;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -13,9 +14,7 @@ public abstract class PersistentEntity implements Serializable, Cloneable {
 	private static final long serialVersionUID = -7848669167086246023L;
 
 	@Id
-	private String id;
-
-    //there is a suggested way with Mongo + Spring Data to do the auditing
+	private BigInteger id;
 
 	//@Temporal(TemporalType.TIMESTAMP) TODO: temporary to see how is with mongo
 	@CreatedDate
@@ -25,11 +24,11 @@ public abstract class PersistentEntity implements Serializable, Cloneable {
     @LastModifiedDate
     private Date modified;
 
-    public String getId() {
+    public BigInteger getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(BigInteger id) {
         this.id = id;
     }
 
