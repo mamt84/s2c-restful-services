@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-282.0" y="-39.0">com.aguacate.send2cuba.restful.model.embedded.BasicContactInformation</node>
+    <node x="-106.0" y="244.0">com.aguacate.send2cuba.restful.model.embedded.CompanyContactInformation</node>
+    <node x="-227.0" y="129.0">com.aguacate.send2cuba.restful.model.embedded.ProviderContactInformation</node>
+    <node x="" y="">com.aguacate.send2cuba.restful.model.embedded.PersonalContactInformation</node>
+    <node x="42.0" y="-2.0">com.aguacate.send2cuba.restful.model.embedded.Address</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.aguacate.send2cuba.restful.model.embedded.ProviderContactInformation" target="com.aguacate.send2cuba.restful.model.embedded.BasicContactInformation">
+      <point x="-44.0" y="-34.0" />
+      <point x="-184.0" y="116.0" />
+      <point x="-184.0" y="104.0" />
+      <point x="0.0" y="44.0" />
+    </edge>
+    <edge source="com.aguacate.send2cuba.restful.model.embedded.ProviderContactInformation" target="com.aguacate.send2cuba.restful.model.embedded.Address">
+      <point x="44.0" y="-34.0" />
+      <point x="26.0" y="131.0" />
+      <point x="69.0" y="131.0" />
+      <point x="0.0" y="74.0" />
+    </edge>
+    <edge source="com.aguacate.send2cuba.restful.model.embedded.PersonalContactInformation" target="com.aguacate.send2cuba.restful.model.embedded.ProviderContactInformation">
+      <point x="0.0" y="-44.0" />
+      <point x="-224.0" y="229.0" />
+      <point x="-211.0" y="218.0" />
+      <point x="-44.0" y="34.0" />
+    </edge>
+    <edge source="com.aguacate.send2cuba.restful.model.embedded.CompanyContactInformation" target="com.aguacate.send2cuba.restful.model.embedded.ProviderContactInformation">
+      <point x="0.0" y="-34.0" />
+      <point x="-47.0" y="226.0" />
+      <point x="-88.0" y="202.0" />
+      <point x="44.0" y="34.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="236.0" y="202.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

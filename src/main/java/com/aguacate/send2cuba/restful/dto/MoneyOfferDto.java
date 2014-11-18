@@ -2,6 +2,7 @@ package com.aguacate.send2cuba.restful.dto;
 
 import com.aguacate.send2cuba.restful.model.type.Province;
 
+import java.math.BigInteger;
 import java.util.Set;
 
 /**
@@ -21,7 +22,7 @@ public class MoneyOfferDto extends BaseOfferDto {
     public MoneyOfferDto() {
     }
 
-    public MoneyOfferDto(String originCurrency, String targetCurrency, int fee, int minimum, int maximum, int price, Set<TypeDto> provinces, String id, boolean active, boolean special, String description) {
+    public MoneyOfferDto(String originCurrency, String targetCurrency, int fee, int minimum, int maximum, int price, Set<TypeDto> provinces, BigInteger id, boolean active, boolean special, String description) {
         this.originCurrency = originCurrency;
         this.targetCurrency = targetCurrency;
         this.fee = fee;

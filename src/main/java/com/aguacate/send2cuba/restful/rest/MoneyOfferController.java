@@ -35,7 +35,7 @@ public class MoneyOfferController {
 
     @RequestMapping(value = "{businessId}/money-offers/{offerId}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.OK)
-    public BigInteger save(@PathVariable String businessId, @RequestBody MoneyOfferDto moneyOffer) {
+    public BigInteger save(@PathVariable String businessId, @RequestBody MoneyOfferDto offer) {
         //TODO: Implement, return Id of updated element
         return null; //new Id
     }
