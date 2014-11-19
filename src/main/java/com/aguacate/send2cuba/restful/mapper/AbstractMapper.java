@@ -1,6 +1,8 @@
 package com.aguacate.send2cuba.restful.mapper;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -20,11 +22,15 @@ import com.google.common.collect.Lists;
  * Created by maikel on 11/6/2014.
  */
 // TODO: Incomplete work, has to be finished
-public class AbstractMapper<E extends PersistentEntity, D extends BaseDto> implements
+    //Update: I needed this working to finishe the first CRUD, refactor later.
+public abstract class AbstractMapper<E extends PersistentEntity, D extends BaseDto> implements
 		Mapper<E, D> {
 
-	@Override
-	public List<D> mapCollectionToDto(Iterable<E> collection) {
+    protected abstract E getNewEntity();
+    protected abstract D getNewDto();
+
+    @Override
+	public List<D> mapCollectionToDto(Iterable<E> collection){
 		List<D> list = new ArrayList<D>();
 		for (E e : collection) {
 			list.add(this.mapToDto(e));
@@ -41,10 +47,10 @@ public class AbstractMapper<E extends PersistentEntity, D extends BaseDto> imple
 		return list;
 	}
 
-	@Override
-	public D mapToDto(E entity) {
-
-		return null;
+	//@Override
+	public D mapToDto(E entity){
+        D dto = getNewDto();
+		return this.mapToDto(entity,dto);
 	}
 
 	@Override
@@ -55,10 +61,10 @@ public class AbstractMapper<E extends PersistentEntity, D extends BaseDto> imple
 		// return (D) mapSourceToTarget(entity, dto);
 	}
 
-	@Override
-	public E mapToEntity(D dto) {
-		// return DozerBeanMapperSingletonWrapper.getInstance().map(dto, )
-		return null;
+	//@Override
+	public E mapToEntity(D dto){
+		E entity = getNewEntity();
+        return this.mapToEntity(dto,entity);
 	}
 
 	@Override
@@ -92,7 +98,7 @@ public class AbstractMapper<E extends PersistentEntity, D extends BaseDto> imple
 		/*
 		 * Using introspection to copy all the beans fields to another bean
 		 * excluding all fields annotated with @DoNotMap. Only requirement as
-		 * per JabaBeans specification is that the fields have accesor methods
+		 * per JavaBeans specification is that the fields have accesor methods
 		 * and have the same name in source as in target objects
 		 */
 		BeanUtils.copyProperties(source, target,

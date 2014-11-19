@@ -7,6 +7,8 @@ import com.aguacate.send2cuba.restful.core.BaseIntegrationTest;
 import com.aguacate.send2cuba.restful.dto.TypeDto;
 import com.aguacate.send2cuba.restful.model.type.Province;
 
+import java.math.BigInteger;
+
 public class MapperTest extends BaseIntegrationTest {
 
 	// TODO: Incomplete work AbstractMapper has to be given some shape, not good
@@ -15,14 +17,14 @@ public class MapperTest extends BaseIntegrationTest {
 	public void testMapDtoToEntity() {
 		Province actual = new Province();
 		TypeDto dto = new TypeDto();
-		dto.setId("id");
+		dto.setId(new BigInteger("1"));
 		dto.setValue("value");
 
 		AbstractMapper<Province, TypeDto> mapper = new AbstractMapper<Province, TypeDto>();
 		mapper.mapToEntity(dto, actual);
 
 		Province expected = new Province("value");
-		expected.setId("id");
+		expected.setId(new BigInteger("1"));
 
 		Assert.assertEquals(expected, actual);
 	}

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/business")
+@RequestMapping("company/{companyId}/business")
 public class MoneyOfferController {
 
     @RequestMapping(value = "{businessId}/money-offers", method = RequestMethod.GET)

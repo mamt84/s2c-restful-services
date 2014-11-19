@@ -1,10 +1,8 @@
 package com.aguacate.send2cuba.restful.service;
 
-import com.aguacate.send2cuba.restful.dto.BaseOfferDto;
 import com.aguacate.send2cuba.restful.dto.MoneyOfferDto;
-import com.aguacate.send2cuba.restful.dto.TypeDto;
-import com.aguacate.send2cuba.restful.model.extension.MoneyOffer;
 
+import java.math.BigInteger;
 import java.util.List;
 
 /**
@@ -12,10 +10,10 @@ import java.util.List;
  */
 public interface MoneyOfferService {
 
-    public List<MoneyOfferDto> getAllByBusiness(Long businessId);
+    public List<MoneyOfferDto> getAllByBusinessAndCompany(BigInteger businessId, BigInteger companyId);
 
-    public Long delete(Long businessId, Long itemId);
+    public BigInteger delete(BigInteger businessId, BigInteger companyId, BigInteger itemId);
 
-    public Long saveOrUpdate(Long businessId, MoneyOfferDto item);
+    public BigInteger saveOrUpdate(BigInteger businessId, BigInteger companyId, MoneyOfferDto item);
 
 }
