@@ -10,6 +10,7 @@ import java.util.List;
  * Created by maikel on 11/6/2014.
  */
 public class CompanyBusinessDto extends BaseDto{
+
     private Company company;
 
     private ContactInformation contactInformation;
