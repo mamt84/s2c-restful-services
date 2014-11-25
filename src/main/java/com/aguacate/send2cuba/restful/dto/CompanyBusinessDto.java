@@ -1,9 +1,11 @@
 package com.aguacate.send2cuba.restful.dto;
 
 import com.aguacate.send2cuba.restful.model.business.Company;
+import com.aguacate.send2cuba.restful.model.business.MapLocation;
 import com.aguacate.send2cuba.restful.model.contact.ContactInformation;
 import com.aguacate.send2cuba.restful.model.offer.MoneyOffer;
 
+import java.math.BigInteger;
 import java.util.List;
 
 /**
@@ -11,10 +13,12 @@ import java.util.List;
  */
 public class CompanyBusinessDto extends BaseDto{
 
-    private Company company;
+    private BigInteger companyId;
 
     private ContactInformation contactInformation;
 
-    private List<MoneyOffer> moneyOffers;
+    private MapLocationDto mapLocation;
+
+    private boolean discloseLocation;
 
 }

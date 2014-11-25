@@ -1,5 +1,7 @@
 package com.aguacate.send2cuba.restful.service.impl;
 
+import com.aguacate.send2cuba.restful.dto.CompanyBusinessDto;
+import com.aguacate.send2cuba.restful.mapper.CompanyBusinessMapper;
 import com.aguacate.send2cuba.restful.model.business.CompanyBusiness;
 import com.aguacate.send2cuba.restful.repository.CompanyBusinessRepository;
 import com.aguacate.send2cuba.restful.service.CompanyBusinessService;
@@ -15,15 +17,19 @@ import java.math.BigInteger;
 public class CompanyBusinessServiceImpl implements CompanyBusinessService {
 
     @Autowired
-    CompanyBusinessRepository companyBusinessRepository;
+    private CompanyBusinessRepository companyBusinessRepository;
+
+    @Autowired
+    private CompanyBusinessMapper companyBusinessMapper;
 
     @Override
-    public BigInteger save(CompanyBusiness item) {
-        return null;
+    public BigInteger saveBasicInformation(CompanyBusinessDto item) {
+        return companyBusinessRepository.save(companyBusinessMapper.mapToEntity(item)).getId();
     }
 
     @Override
-    public CompanyBusiness get(BigInteger id) {
+    public CompanyBusinessDto get(BigInteger id) {
         return null;
     }
+
 }
