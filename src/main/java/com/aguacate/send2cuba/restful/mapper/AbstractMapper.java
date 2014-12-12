@@ -1,19 +1,15 @@
 package com.aguacate.send2cuba.restful.mapper;
 
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.dozer.DozerBeanMapperSingletonWrapper;
 import org.springframework.beans.BeanUtils;
 
 import com.aguacate.send2cuba.restful.dto.BaseDto;
 import com.aguacate.send2cuba.restful.exception.AguacateRuntimeException;
 import com.aguacate.send2cuba.restful.model.base.PersistentEntity;
-import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.Lists;
@@ -55,9 +51,7 @@ public abstract class AbstractMapper<E extends PersistentEntity, D extends BaseD
 
 	@Override
 	public D mapToDto(E entity, D dto) {
-		org.dozer.Mapper mapper = DozerBeanMapperSingletonWrapper.getInstance();
-		mapper.map(entity, dto);
-		return dto;
+		return null;
 		// return (D) mapSourceToTarget(entity, dto);
 	}
 
@@ -69,8 +63,7 @@ public abstract class AbstractMapper<E extends PersistentEntity, D extends BaseD
 
 	@Override
 	public E mapToEntity(D dto, E entity) {
-		DozerBeanMapperSingletonWrapper.getInstance().map(dto, entity);
-		return entity;
+		return null;
 		// return (E) mapSourceToTarget(dto, entity);
 	}
 
