@@ -1,6 +1,6 @@
 package com.aguacate.send2cuba.restful.service;
 
-import com.aguacate.send2cuba.restful.dto.MoneyOfferDto;
+import com.aguacate.send2cuba.restful.dto.backend.MoneyOfferDto;
 
 import java.math.BigInteger;
 import java.util.List;

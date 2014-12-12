@@ -1,8 +1,7 @@
 package com.aguacate.send2cuba.restful.service;
 
 import com.aguacate.send2cuba.restful.core.DataBaseIntegrationTest;
-import com.aguacate.send2cuba.restful.dto.MoneyOfferDto;
-import com.aguacate.send2cuba.restful.dto.TypeDto;
+import com.aguacate.send2cuba.restful.dto.backend.MoneyOfferDto;
 import com.aguacate.send2cuba.restful.model.business.CompanyBusiness;
 import com.aguacate.send2cuba.restful.repository.CompanyBusinessRepository;
 import org.junit.After;
@@ -11,7 +10,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
 

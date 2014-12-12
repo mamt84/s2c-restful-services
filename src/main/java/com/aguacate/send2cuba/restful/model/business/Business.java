@@ -19,4 +19,20 @@ public class Business extends PersistentEntity {
     @DBRef(lazy = true)
     private Feedback feedback;
 
+
+    public MapLocation getMapLocation() {
+        return mapLocation;
+    }
+
+    public void setMapLocation(MapLocation mapLocation) {
+        this.mapLocation = mapLocation;
+    }
+
+    public Feedback getFeedback() {
+        return feedback;
+    }
+
+    public void setFeedback(Feedback feedback) {
+        this.feedback = feedback;
+    }
 }

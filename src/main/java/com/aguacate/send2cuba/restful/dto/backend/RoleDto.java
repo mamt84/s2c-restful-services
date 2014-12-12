@@ -1,4 +1,4 @@
-package com.aguacate.send2cuba.restful.dto;
+package com.aguacate.send2cuba.restful.dto.backend;
 
 import com.aguacate.send2cuba.restful.model.base.PersistentEntity;
 import com.aguacate.send2cuba.restful.model.user.Permission;

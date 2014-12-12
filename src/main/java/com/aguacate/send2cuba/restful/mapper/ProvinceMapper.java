@@ -1,8 +1,6 @@
 package com.aguacate.send2cuba.restful.mapper;
 
-import com.aguacate.send2cuba.restful.dto.MoneyOfferDto;
-import com.aguacate.send2cuba.restful.dto.TypeDto;
-import com.aguacate.send2cuba.restful.model.offer.MoneyOffer;
+import com.aguacate.send2cuba.restful.dto.backend.TypeDto;
 import com.aguacate.send2cuba.restful.model.type.Province;
 import org.springframework.stereotype.Component;
 

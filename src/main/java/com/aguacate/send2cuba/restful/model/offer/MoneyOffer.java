@@ -1,7 +1,6 @@
 package com.aguacate.send2cuba.restful.model.offer;
 
-import com.aguacate.send2cuba.restful.dto.TypeDto;
-import com.aguacate.send2cuba.restful.model.offer.Offer;
+import com.aguacate.send2cuba.restful.dto.backend.TypeDto;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;

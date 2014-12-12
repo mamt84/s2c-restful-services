@@ -1,6 +1,6 @@
 package com.aguacate.send2cuba.restful.service;
 
-import com.aguacate.send2cuba.restful.dto.TypeDto;
+import com.aguacate.send2cuba.restful.dto.backend.TypeDto;
 
 import java.util.List;
 

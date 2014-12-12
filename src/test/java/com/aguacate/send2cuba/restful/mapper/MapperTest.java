@@ -1,13 +1,8 @@
 package com.aguacate.send2cuba.restful.mapper;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import com.aguacate.send2cuba.restful.core.BaseIntegrationTest;
-import com.aguacate.send2cuba.restful.dto.TypeDto;
-import com.aguacate.send2cuba.restful.model.type.Province;
-
-import java.math.BigInteger;
 
 public class MapperTest extends BaseIntegrationTest {
 

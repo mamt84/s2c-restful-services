@@ -88,12 +88,7 @@ public abstract class AbstractMapper<E extends PersistentEntity, D extends BaseD
 					public boolean apply(Field input) {
 						return input.isAnnotationPresent(DoNotMap.class);
 					}
-				}), new Function<Field, String>() {
-			@Override
-			public String apply(Field input) {
-				return input.getName();
-			}
-		});
+				}), input -> input.getName());
 
 		/*
 		 * Using introspection to copy all the beans fields to another bean

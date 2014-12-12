@@ -1,6 +1,4 @@
-package com.aguacate.send2cuba.restful.dto;
-
-import com.aguacate.send2cuba.restful.model.type.Province;
+package com.aguacate.send2cuba.restful.dto.backend;
 
 import java.math.BigInteger;
 import java.util.Set;

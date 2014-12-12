@@ -1,9 +1,11 @@
-package com.aguacate.send2cuba.restful.dto;
+package com.aguacate.send2cuba.restful.dto.backend;
+
+import com.aguacate.send2cuba.restful.dto.BaseDto;
 
 /**
  * Created by maikel on 11/12/2014.
  */
-public class BaseOfferDto extends BaseDto{
+public class BaseOfferDto extends BaseDto {
     private boolean active;
     private boolean special;
     private String description;

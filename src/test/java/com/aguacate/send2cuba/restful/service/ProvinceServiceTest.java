@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.aguacate.send2cuba.restful.core.DataBaseIntegrationTest;
-import com.aguacate.send2cuba.restful.dto.TypeDto;
+import com.aguacate.send2cuba.restful.dto.backend.TypeDto;
 
 /**
  * Created by maikel on 11/6/2014.

@@ -1,11 +1,12 @@
-package com.aguacate.send2cuba.restful.dto;
+package com.aguacate.send2cuba.restful.dto.backend;
 
+import com.aguacate.send2cuba.restful.dto.BaseDto;
 import com.aguacate.send2cuba.restful.model.base.PersistentEntity;
 import com.aguacate.send2cuba.restful.model.user.Role;
 
 import java.util.Collection;
 
-public abstract class UserDto extends BaseDto{
+public abstract class UserDto extends BaseDto {
 
 	private String username;
 

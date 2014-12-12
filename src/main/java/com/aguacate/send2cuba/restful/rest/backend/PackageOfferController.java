@@ -1,6 +1,6 @@
-package com.aguacate.send2cuba.restful.rest;
+package com.aguacate.send2cuba.restful.rest.backend;
 
-import com.aguacate.send2cuba.restful.dto.PackageOfferDto;
+import com.aguacate.send2cuba.restful.dto.backend.PackageOfferDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

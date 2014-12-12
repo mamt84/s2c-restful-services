@@ -1,9 +1,11 @@
-package com.aguacate.send2cuba.restful.dto;
+package com.aguacate.send2cuba.restful.dto.backend;
+
+import com.aguacate.send2cuba.restful.dto.BaseDto;
 
 /**
  * Created by maikel on 11/6/2014.
  */
-public class TypeDto extends BaseDto{
+public class TypeDto extends BaseDto {
 
     public String value;
 

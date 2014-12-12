@@ -1,5 +1,6 @@
-package com.aguacate.send2cuba.restful.dto;
+package com.aguacate.send2cuba.restful.dto.backend;
 
+import com.aguacate.send2cuba.restful.dto.BaseDto;
 import com.aguacate.send2cuba.restful.model.business.Company;
 import com.aguacate.send2cuba.restful.model.user.User;
 

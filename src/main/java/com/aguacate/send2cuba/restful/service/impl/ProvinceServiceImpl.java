@@ -1,6 +1,6 @@
 package com.aguacate.send2cuba.restful.service.impl;
 
-import com.aguacate.send2cuba.restful.dto.TypeDto;
+import com.aguacate.send2cuba.restful.dto.backend.TypeDto;
 import com.aguacate.send2cuba.restful.mapper.ProvinceMapper;
 import com.aguacate.send2cuba.restful.repository.ProvinceRepository;
 import com.aguacate.send2cuba.restful.service.ProvinceService;

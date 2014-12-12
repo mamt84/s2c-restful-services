@@ -1,13 +1,10 @@
-package com.aguacate.send2cuba.restful.rest;
+package com.aguacate.send2cuba.restful.rest.backend;
 
-import com.aguacate.send2cuba.restful.dto.CompanyBusinessDto;
-import com.aguacate.send2cuba.restful.dto.CompanyUserDto;
+import com.aguacate.send2cuba.restful.dto.backend.CompanyUserDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by maikel on 11/24/2014.
