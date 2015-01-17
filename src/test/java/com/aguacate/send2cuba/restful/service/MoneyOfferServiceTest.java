@@ -34,11 +34,6 @@ public class MoneyOfferServiceTest extends DataBaseIntegrationTest {
 
     @Test
     public void saveReadTest(){
-        MoneyOfferDto moneyOfferDto = new MoneyOfferDto();
-        moneyOfferDto.setPrice(100);
-        service.saveOrUpdate(saved.getId(),new BigInteger("1"),moneyOfferDto);
-        List<MoneyOfferDto> dtos = service.getAllByBusinessAndCompany(saved.getId(),new BigInteger("1"));
-        Assert.assertEquals(dtos.get(0).getPrice(), 100);
     };
 
     @After

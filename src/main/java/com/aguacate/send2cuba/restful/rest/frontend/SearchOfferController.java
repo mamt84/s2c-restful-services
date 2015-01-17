@@ -9,12 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.math.BigInteger;
 import java.util.List;
 
-@RestController
-@RequestMapping("/search")
 public class SearchOfferController {
 
-    @RequestMapping(value = "{zipcode}/money-offers", method = RequestMethod.POST)
-    @ResponseStatus(HttpStatus.OK)
     public List<BusinessLocationDto> get(@PathVariable String zipcode, @RequestBody MoneyOfferSearchParametersDto moneyOfferParameters) {
         return null;
     }

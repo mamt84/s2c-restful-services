@@ -1,5 +1,7 @@
 package com.aguacate.send2cuba.restful.dto.frontend;
 
+import com.aguacate.send2cuba.restful.dto.backend.TypeDto;
+
 import java.util.Arrays;
 
 /**
@@ -11,6 +13,6 @@ public class MoneyOfferSearchParametersDto {
     private Integer feeFrom;
     private Integer feeTo;
     private Boolean deliver;
-    private int[] provinces; //ids
+    private TypeDto[] provinces; //ids
 
 }

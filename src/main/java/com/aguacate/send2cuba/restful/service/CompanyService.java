@@ -9,10 +9,8 @@ import java.util.List;
 /**
  * Created by maikel on 11/18/2014.
  */
-public interface CompanyBusinessService {
-
-    public void save(CompanyBusinessDto item);
-    public CompanyBusinessDto get(BigInteger id);
-    public void delete(BigInteger id);
-    public List<CompanyBusinessDto> getByCompany(BigInteger companyId);
+public interface CompanyService {
+    public void save(CompanyDto item);
+    public CompanyDto get(BigInteger id);
+    public CompanyDto getByUserId(BigInteger userId);
 }

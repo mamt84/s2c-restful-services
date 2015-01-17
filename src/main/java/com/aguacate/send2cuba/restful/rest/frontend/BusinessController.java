@@ -9,18 +9,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/search")
 public class BusinessController {
 
-    @RequestMapping(value = "company-business/{businessId}", method = RequestMethod.GET)
-    @ResponseStatus(HttpStatus.OK)
     public List<CompanyBusinessDto> getCompanyBusiness(@PathVariable String businessId) {
         return null;
     }
 
-    @RequestMapping(value = "individual-business/{businessId}", method = RequestMethod.GET)
-    @ResponseStatus(HttpStatus.OK)
     public List<IndividualBusinessDto> getIndividualBusiness(@PathVariable String businessId) {
         return null;
     }

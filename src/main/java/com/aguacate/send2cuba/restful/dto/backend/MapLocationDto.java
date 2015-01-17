@@ -7,9 +7,6 @@ import com.aguacate.send2cuba.restful.model.base.PersistentEntity;
  */
 public class MapLocationDto extends PersistentEntity{
 
-    /**
-     * These attributes are to store the full Location, and latitude and longitude in separate fields
-     */
     private String fullLocation;
     private Double latitude;
     private Double longitude;

@@ -1,5 +1,6 @@
 package com.aguacate.send2cuba.restful.dto.frontend;
 
+import com.aguacate.send2cuba.restful.dto.CompanyDto;
 import com.aguacate.send2cuba.restful.dto.backend.MoneyOfferDto;
 import com.aguacate.send2cuba.restful.model.contact.ContactInformation;
 import com.aguacate.send2cuba.restful.model.offer.MoneyOffer;

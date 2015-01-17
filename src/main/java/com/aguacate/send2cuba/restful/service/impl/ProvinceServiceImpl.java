@@ -1,7 +1,6 @@
 package com.aguacate.send2cuba.restful.service.impl;
 
 import com.aguacate.send2cuba.restful.dto.backend.TypeDto;
-import com.aguacate.send2cuba.restful.mapper.ProvinceMapper;
 import com.aguacate.send2cuba.restful.repository.ProvinceRepository;
 import com.aguacate.send2cuba.restful.service.ProvinceService;
 
@@ -22,22 +21,20 @@ public class ProvinceServiceImpl implements ProvinceService {
 
     @Override
     public List<TypeDto> findAll() {
-        return getProvinceMapper().mapCollectionToDto(provinceRepository.findAll());
+        return null;
+        //return getProvinceMapper().mapCollectionToDto(provinceRepository.findAll());
     }
 
     @Override
     public List<TypeDto> findProvinceByName(String name) {
-        return getProvinceMapper().mapCollectionToDto(provinceRepository.findByValue(name));
+        return null;
+        //return getProvinceMapper().mapCollectionToDto(provinceRepository.findByValue(name));
     }
 
     @Override
-    @Transactional
     public void save(TypeDto typeDto) {
-        provinceRepository.save(getProvinceMapper().mapToEntity(typeDto));
+
     }
 
-    ProvinceMapper getProvinceMapper(){
-        return new ProvinceMapper();
-    };
 
 }

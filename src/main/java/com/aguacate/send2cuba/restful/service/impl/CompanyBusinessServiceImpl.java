@@ -1,11 +1,13 @@
 package com.aguacate.send2cuba.restful.service.impl;
 
+import com.aguacate.send2cuba.restful.dto.CompanyDto;
 import com.aguacate.send2cuba.restful.dto.backend.CompanyBusinessDto;
-import com.aguacate.send2cuba.restful.mapper.CompanyBusinessMapper;
+import com.aguacate.send2cuba.restful.dto.frontend.ContactInformationDto;
+import com.aguacate.send2cuba.restful.mapper.DefaultMapper;
+import com.aguacate.send2cuba.restful.mapper.Mapper;
+import com.aguacate.send2cuba.restful.model.business.Company;
 import com.aguacate.send2cuba.restful.model.business.CompanyBusiness;
-import com.aguacate.send2cuba.restful.model.business.MapLocation;
 import com.aguacate.send2cuba.restful.model.contact.ContactInformation;
-import com.aguacate.send2cuba.restful.model.feedback.Feedback;
 import com.aguacate.send2cuba.restful.repository.CompanyBusinessRepository;
 import com.aguacate.send2cuba.restful.repository.CompanyRepository;
 import com.aguacate.send2cuba.restful.service.CompanyBusinessService;
@@ -29,35 +31,21 @@ public class CompanyBusinessServiceImpl implements CompanyBusinessService {
     private CompanyRepository companyRepository;
 
     @Autowired
-    private CompanyBusinessMapper companyBusinessMapper;
+    private Mapper<CompanyBusiness,CompanyBusinessDto> companyBusinessMapper;
+
+    @Autowired
+    private Mapper<ContactInformation,ContactInformationDto> contactInformationMapper;
+
+
 
     @Override
     @Transactional
     public void save(CompanyBusinessDto item) {
-        CompanyBusiness companyBusiness;
-        if(item.getId() == null) {
-            companyBusiness = new CompanyBusiness();
-            companyBusiness.setCompany(companyRepository.findOne(item.getCompanyId()));
-            companyBusiness.setFeedback(new Feedback());
-        }
-        else {
-            companyBusiness = companyBusinessRepository.findOne(item.getId());
-        }
-        //mapping TODO: make it not manual?
-        MapLocation mapLocation = new MapLocation();
-        mapLocation.setFullLocation(item.getMapLocation().getFullLocation());
-        mapLocation.setLatitude(item.getMapLocation().getLatitude());
-        mapLocation.setLongitude(item.getMapLocation().getLongitude());
-        //TODO: set up the aproximateLocation to use it on the front end
-        companyBusiness.setMapLocation(mapLocation);
+        CompanyBusiness entity = companyBusinessMapper.mapToEntity(new CompanyBusiness(),item);
+        entity.setCompany(companyRepository.findOne(item.getCompanyId()));
 
-        ContactInformation contactInformation = new ContactInformation();
-        contactInformation.setEmail(item.getContactInformation().getEmail());
-        companyBusiness.setContactInformation(contactInformation);
-        //end mapping
-
-        companyBusinessRepository.save(companyBusiness);
-
+        ContactInformation contactInformation = contactInformationMapper.mapToEntity(entity.getContactInformation(),new ContactInformationDto());
+        entity.setContactInformation(contactInformation);
     }
 
     @Override
