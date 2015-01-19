@@ -12,6 +12,7 @@ import java.util.List;
  */
 public class CompanyBusinessDto extends BusinessDto {
 
+
     private CompanyDto company;
 
     private ContactInformationDto contactInformation;

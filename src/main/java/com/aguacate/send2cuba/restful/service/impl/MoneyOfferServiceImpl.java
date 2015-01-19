@@ -37,6 +37,7 @@ public class MoneyOfferServiceImpl implements MoneyOfferService {
     @Transactional
     public BigInteger delete(BigInteger businessId, BigInteger companyId, BigInteger itemId) {
         CompanyBusiness business = findCompanyBusiness(businessId);
+
         Iterator<MoneyOffer> iterator = business.getMoneyOffers().iterator();
 
         while(iterator.hasNext()){

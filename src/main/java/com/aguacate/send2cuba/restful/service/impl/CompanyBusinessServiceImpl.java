@@ -1,16 +1,14 @@
 package com.aguacate.send2cuba.restful.service.impl;
 
-import com.aguacate.send2cuba.restful.dto.CompanyDto;
 import com.aguacate.send2cuba.restful.dto.backend.CompanyBusinessDto;
 import com.aguacate.send2cuba.restful.dto.frontend.ContactInformationDto;
-import com.aguacate.send2cuba.restful.mapper.DefaultMapper;
 import com.aguacate.send2cuba.restful.mapper.Mapper;
-import com.aguacate.send2cuba.restful.model.business.Company;
 import com.aguacate.send2cuba.restful.model.business.CompanyBusiness;
 import com.aguacate.send2cuba.restful.model.contact.ContactInformation;
 import com.aguacate.send2cuba.restful.repository.CompanyBusinessRepository;
 import com.aguacate.send2cuba.restful.repository.CompanyRepository;
 import com.aguacate.send2cuba.restful.service.CompanyBusinessService;
+import com.google.common.base.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,12 +38,17 @@ public class CompanyBusinessServiceImpl implements CompanyBusinessService {
 
     @Override
     @Transactional
-    public void save(CompanyBusinessDto item) {
+    public BigInteger save(CompanyBusinessDto item) {
         CompanyBusiness entity = companyBusinessMapper.mapToEntity(new CompanyBusiness(),item);
         entity.setCompany(companyRepository.findOne(item.getCompanyId()));
 
-        ContactInformation contactInformation = contactInformationMapper.mapToEntity(entity.getContactInformation(),new ContactInformationDto());
+        ContactInformation contactInformation = new ContactInformation();
+        contactInformation = contactInformationMapper.mapToEntity(contactInformation,item.getContactInformation());
         entity.setContactInformation(contactInformation);
+
+        entity  = companyBusinessRepository.save(entity);
+
+        return entity.getId();
     }
 
     @Override
@@ -58,7 +61,7 @@ public class CompanyBusinessServiceImpl implements CompanyBusinessService {
 
     @Override
     public void delete(BigInteger id) {
-
+        companyBusinessRepository.delete(id);
     }
 
     @Override

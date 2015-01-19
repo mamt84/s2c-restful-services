@@ -8,24 +8,27 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
  * Created by maikel on 11/15/2014.
  */
 public class Business extends PersistentEntity {
-    // Represents the concept of a physical person or office that belongs to a larger company
-    // (let's say Cubamax has offices in Kentucky and Miami,
-    // This would represent one of those offices with its specific details, prices, location, everything,
-    // however, it must be managed by a single system user [different people can share the same user,
-    // or  we make it better in the future])
 
-    private MapLocation mapLocation;
+    private String fullLocation;
 
-    @DBRef(lazy = true)
+    private boolean discloseLocation;
+
     private Feedback feedback;
 
-
-    public MapLocation getMapLocation() {
-        return mapLocation;
+    public String getFullLocation() {
+        return fullLocation;
     }
 
-    public void setMapLocation(MapLocation mapLocation) {
-        this.mapLocation = mapLocation;
+    public void setFullLocation(String fullLocation) {
+        this.fullLocation = fullLocation;
+    }
+
+    public boolean isDiscloseLocation() {
+        return discloseLocation;
+    }
+
+    public void setDiscloseLocation(boolean discloseLocation) {
+        this.discloseLocation = discloseLocation;
     }
 
     public Feedback getFeedback() {

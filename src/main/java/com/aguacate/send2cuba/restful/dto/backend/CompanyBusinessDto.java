@@ -16,14 +16,13 @@ public class CompanyBusinessDto extends BaseDto {
 
     private ContactInformationDto contactInformation;
 
-    private MapLocationDto mapLocation;
+    private String fullLocation;
 
     private boolean discloseLocation;
 
     private List<MoneyOfferDto> moneyOffers;
 
     private List<PackageOfferDto> packageOffers;
-
 
     public BigInteger getCompanyId() {
         return companyId;
@@ -41,12 +40,12 @@ public class CompanyBusinessDto extends BaseDto {
         this.contactInformation = contactInformation;
     }
 
-    public MapLocationDto getMapLocation() {
-        return mapLocation;
+    public String getFullLocation() {
+        return fullLocation;
     }
 
-    public void setMapLocation(MapLocationDto mapLocation) {
-        this.mapLocation = mapLocation;
+    public void setFullLocation(String fullLocation) {
+        this.fullLocation = fullLocation;
     }
 
     public boolean isDiscloseLocation() {
@@ -56,7 +55,7 @@ public class CompanyBusinessDto extends BaseDto {
     public void setDiscloseLocation(boolean discloseLocation) {
         this.discloseLocation = discloseLocation;
     }
-
+/*
     public List<MoneyOfferDto> getMoneyOffers() {
         return moneyOffers;
     }
@@ -72,4 +71,5 @@ public class CompanyBusinessDto extends BaseDto {
     public void setPackageOffers(List<PackageOfferDto> packageOffers) {
         this.packageOffers = packageOffers;
     }
+    */
 }

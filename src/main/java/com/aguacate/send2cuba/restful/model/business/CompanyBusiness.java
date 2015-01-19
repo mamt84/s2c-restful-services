@@ -2,6 +2,7 @@ package com.aguacate.send2cuba.restful.model.business;
 
 import com.aguacate.send2cuba.restful.model.contact.ContactInformation;
 import com.aguacate.send2cuba.restful.model.offer.MoneyOffer;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.List;
 
@@ -10,12 +11,12 @@ import java.util.List;
  */
 public class CompanyBusiness extends Business {
 
+    @DBRef(lazy = false)
     private Company company;
 
     private ContactInformation contactInformation;
 
     private List<MoneyOffer> moneyOffers;
-
 
     public Company getCompany() {
         return company;
@@ -40,4 +41,5 @@ public class CompanyBusiness extends Business {
     public void setMoneyOffers(List<MoneyOffer> moneyOffers) {
         this.moneyOffers = moneyOffers;
     }
+
 }

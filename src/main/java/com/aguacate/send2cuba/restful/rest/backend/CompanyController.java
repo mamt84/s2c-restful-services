@@ -23,7 +23,7 @@ public class CompanyController {
     @RequestMapping(value = "/{companyId}",method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.OK)
     public void update(@PathVariable BigInteger companyId, @RequestBody CompanyDto element){
-
+        companyService.save(element);
     }
 
     @RequestMapping(value = "/{companyId}", method = RequestMethod.GET)

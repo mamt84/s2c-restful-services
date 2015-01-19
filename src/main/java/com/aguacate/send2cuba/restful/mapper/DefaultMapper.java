@@ -50,8 +50,7 @@ public class DefaultMapper<E extends PersistentEntity, D extends BaseDto> implem
     private Collection<String> getFieldsToMap(Class dtoClass){  // always mapping the Dto
         Collection<String> entityFieldNames = Collections2.transform(Collections2.filter(
                         Lists.newArrayList(dtoClass.getFields()),
-                        input -> input.isAnnotationPresent(DoNotMap.class)
-                                && !(Collection.class.isAssignableFrom(input.getType()))
+                        input -> !(Collection.class.isAssignableFrom(input.getType()))
                                 && !(BaseDto.class.isAssignableFrom(input.getType())) ),
                 input -> input.getName());
         return entityFieldNames;

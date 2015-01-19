@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface CompanyBusinessService {
 
-    public void save(CompanyBusinessDto item);
+    public BigInteger save(CompanyBusinessDto item);
     public CompanyBusinessDto get(BigInteger id);
     public void delete(BigInteger id);
     public List<CompanyBusinessDto> getByCompany(BigInteger companyId);
