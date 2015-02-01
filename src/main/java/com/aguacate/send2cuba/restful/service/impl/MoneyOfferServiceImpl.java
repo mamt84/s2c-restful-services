@@ -1,5 +1,6 @@
 package com.aguacate.send2cuba.restful.service.impl;
 
+import com.aguacate.send2cuba.restful.core.service.BaseService;
 import com.aguacate.send2cuba.restful.dto.backend.MoneyOfferDto;
 import com.aguacate.send2cuba.restful.model.business.CompanyBusiness;
 import com.aguacate.send2cuba.restful.model.offer.MoneyOffer;
@@ -17,7 +18,7 @@ import java.util.List;
  * Created by maikel on 11/6/2014.
  */
 @Service
-public class MoneyOfferServiceImpl implements MoneyOfferService {
+public class MoneyOfferServiceImpl  extends BaseService implements MoneyOfferService {
 
     @Autowired
     private CompanyBusinessRepository businessRepository;
@@ -53,8 +54,8 @@ public class MoneyOfferServiceImpl implements MoneyOfferService {
     @Override
     @Transactional
     public BigInteger saveOrUpdate(BigInteger businessId, BigInteger companyId, MoneyOfferDto item) {
-        CompanyBusiness business = findCompanyBusiness(businessId);
-        business = businessRepository.save(business);
-        return business.getId();
+        if(item.getId() == null)
+            item.setId(new BigInteger(String.valueOf(getNextNumber(MoneyOffer.class.toString()))));
+        return null;
     }
 }

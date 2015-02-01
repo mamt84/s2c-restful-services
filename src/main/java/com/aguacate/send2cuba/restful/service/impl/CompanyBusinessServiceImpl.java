@@ -1,8 +1,10 @@
 package com.aguacate.send2cuba.restful.service.impl;
 
+import com.aguacate.send2cuba.restful.core.service.BaseService;
 import com.aguacate.send2cuba.restful.dto.backend.CompanyBusinessDto;
 import com.aguacate.send2cuba.restful.dto.frontend.ContactInformationDto;
 import com.aguacate.send2cuba.restful.mapper.Mapper;
+import com.aguacate.send2cuba.restful.model.business.Company;
 import com.aguacate.send2cuba.restful.model.business.CompanyBusiness;
 import com.aguacate.send2cuba.restful.model.contact.ContactInformation;
 import com.aguacate.send2cuba.restful.repository.CompanyBusinessRepository;
@@ -14,13 +16,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by maikel on 11/6/2014.
  */
 @Service
-public class CompanyBusinessServiceImpl implements CompanyBusinessService {
+public class CompanyBusinessServiceImpl extends BaseService implements CompanyBusinessService {
 
     @Autowired
     private CompanyBusinessRepository companyBusinessRepository;
@@ -35,10 +38,12 @@ public class CompanyBusinessServiceImpl implements CompanyBusinessService {
     private Mapper<ContactInformation,ContactInformationDto> contactInformationMapper;
 
 
-
     @Override
     @Transactional
     public BigInteger save(CompanyBusinessDto item) {
+        if(item.getId() == null)
+            item.setId(new BigInteger(String.valueOf(getNextNumber(CompanyBusiness.class.toString()))));
+
         CompanyBusiness entity = companyBusinessMapper.mapToEntity(new CompanyBusiness(),item);
         entity.setCompany(companyRepository.findOne(item.getCompanyId()));
 
@@ -46,7 +51,7 @@ public class CompanyBusinessServiceImpl implements CompanyBusinessService {
         contactInformation = contactInformationMapper.mapToEntity(contactInformation,item.getContactInformation());
         entity.setContactInformation(contactInformation);
 
-        entity  = companyBusinessRepository.save(entity);
+        entity = companyBusinessRepository.save(entity);
 
         return entity.getId();
     }
@@ -54,9 +59,17 @@ public class CompanyBusinessServiceImpl implements CompanyBusinessService {
     @Override
     public CompanyBusinessDto get(BigInteger id) {
         CompanyBusiness companyBusiness = companyBusinessRepository.findOne(id);
-
         CompanyBusinessDto companyBusinessDto = new CompanyBusinessDto();
-        return null;
+
+        companyBusinessDto = companyBusinessMapper.mapToDto(companyBusiness,companyBusinessDto);
+
+        if(companyBusiness.getContactInformation() != null){
+            companyBusinessDto.setContactInformation(contactInformationMapper.mapToDto(companyBusiness.getContactInformation(),new ContactInformationDto()));
+        }
+
+        companyBusinessDto.setCompanyId(companyBusiness.getCompany().getId());
+
+        return companyBusinessDto;
     }
 
     @Override
@@ -66,7 +79,24 @@ public class CompanyBusinessServiceImpl implements CompanyBusinessService {
 
     @Override
     public List<CompanyBusinessDto> getByCompany(BigInteger companyId) {
-        return null;
+
+        List<CompanyBusiness> entities = companyBusinessRepository.findByCompanyId(companyId);
+        List<CompanyBusinessDto> dtos = new ArrayList<CompanyBusinessDto>();
+
+        for (int i = 0; i < entities.size(); i++) {
+            CompanyBusiness companyBusiness = entities.get(i);
+            CompanyBusinessDto dto = companyBusinessMapper.mapToDto(companyBusiness,new CompanyBusinessDto());
+
+            dto.setCompanyId(companyBusiness.getCompany().getId());
+
+            ContactInformation contactInformation = companyBusiness.getContactInformation();
+            if(contactInformation != null) {
+                ContactInformationDto contactInformationDto = contactInformationMapper.mapToDto(contactInformation, new ContactInformationDto());
+                dto.setContactInformation(contactInformationDto);
+            }
+            dtos.add(dto);
+        }
+        return dtos;
     }
 
 }

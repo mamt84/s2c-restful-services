@@ -44,7 +44,6 @@ public class CompanyServiceTest extends DataBaseIntegrationTest {
     @Test
     public void saveTest(){
         CompanyDto entity = new CompanyDto();
-        entity.setId(new BigInteger("999999"));
         entity.setName("Test2");
         entity.setWebsite("Website2");
 

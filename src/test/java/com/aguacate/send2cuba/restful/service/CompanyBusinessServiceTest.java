@@ -13,6 +13,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigInteger;
+import java.util.List;
 
 /**
  * Created by maikel on 11/6/2014.
@@ -25,12 +26,6 @@ public class CompanyBusinessServiceTest extends DataBaseIntegrationTest {
 
     private BigInteger id;
 
-
-
-    @After
-    public void deleteMockCompany(){
-        companyBusinessService.delete(id);
-    };
 
     @Test
     public void saveTest(){
@@ -50,5 +45,14 @@ public class CompanyBusinessServiceTest extends DataBaseIntegrationTest {
         Assert.assertNotNull(id);
 
     };
+
+    @Test
+    public void getAllTest(){
+
+        List list = companyBusinessService.getByCompany(new BigInteger("888888"));
+        Assert.assertNotNull(list);
+
+    };
+
 
 }

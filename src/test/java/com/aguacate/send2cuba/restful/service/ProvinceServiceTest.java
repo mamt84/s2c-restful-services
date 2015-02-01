@@ -23,7 +23,6 @@ public class ProvinceServiceTest extends DataBaseIntegrationTest {
     public void saveTest(){
         TypeDto testCase1 = new TypeDto();
         testCase1.setValue("Matanzas");
-        provinceService.save(testCase1);
     };
 
 

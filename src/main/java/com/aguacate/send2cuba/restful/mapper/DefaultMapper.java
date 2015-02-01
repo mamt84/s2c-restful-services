@@ -24,6 +24,9 @@ public class DefaultMapper<E extends PersistentEntity, D extends BaseDto> implem
 	@Override
 	public D mapToDto(E entity, D dto) {
 
+        if(entity == null || dto == null)
+            return  null;
+
         Class<?> dtoClass = dto.getClass();
 
         Collection<String> entityFieldNames = getFieldsToMap(dtoClass);
@@ -37,12 +40,14 @@ public class DefaultMapper<E extends PersistentEntity, D extends BaseDto> implem
 	@Override
 	public E mapToEntity(E entity, D dto) {
 
+        if(entity == null || dto == null)
+            return  null;
+
         Class<?> dtoClass = dto.getClass();
 
         Collection<String>  entityFieldNames = getFieldsToMap(dtoClass);
 
-        BeanUtils.copyProperties(dto, entity,
-                entityFieldNames.toArray(new String[entityFieldNames.size()]));
+        BeanUtils.copyProperties(dto, entity, entityFieldNames.toArray(new String[entityFieldNames.size()]));
 
         return entity;
 	}

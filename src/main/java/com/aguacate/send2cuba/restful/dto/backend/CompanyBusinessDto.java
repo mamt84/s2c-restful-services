@@ -18,6 +18,8 @@ public class CompanyBusinessDto extends BaseDto {
 
     private String fullLocation;
 
+    private String address;
+
     private boolean discloseLocation;
 
     private List<MoneyOfferDto> moneyOffers;
@@ -50,6 +52,14 @@ public class CompanyBusinessDto extends BaseDto {
 
     public boolean isDiscloseLocation() {
         return discloseLocation;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public void setDiscloseLocation(boolean discloseLocation) {

@@ -1,5 +1,6 @@
 package com.aguacate.send2cuba.restful.service.impl;
 
+import com.aguacate.send2cuba.restful.core.service.BaseService;
 import com.aguacate.send2cuba.restful.dto.CompanyDto;
 import com.aguacate.send2cuba.restful.dto.backend.CompanyBusinessDto;
 import com.aguacate.send2cuba.restful.mapper.DefaultMapper;
@@ -18,22 +19,31 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by maikel on 11/6/2014.
  */
 @Service
-public class CompanyServiceImpl implements CompanyService {
+public class CompanyServiceImpl  extends BaseService implements CompanyService {
 
     @Autowired
     private Mapper<Company,CompanyDto> companyMapper;
 
     @Autowired
+    private Mapper<CompanyBusiness,CompanyBusinessDto> companyBusinessMapper;
+
+    @Autowired
     private CompanyRepository companyRepository;
+
+    @Autowired
+    private CompanyBusinessRepository companyBusinessRepository;
 
     @Override
     public void save(CompanyDto item) {
+        if(item.getId() == null)
+            item.setId(new BigInteger(String.valueOf(getNextNumber(Company.class.toString()))));
         companyRepository.save(companyMapper.mapToEntity(new Company(),item));
     }
 

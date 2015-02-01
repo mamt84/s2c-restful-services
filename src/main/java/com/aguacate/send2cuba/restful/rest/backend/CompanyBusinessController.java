@@ -21,25 +21,35 @@ public class CompanyBusinessController {
     @Autowired
     CompanyBusinessService companyBusinessService;
 
+    @RequestMapping(value = "/",method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
     public List<CompanyBusinessDto> getAll(@PathVariable BigInteger companyId){
-        return new ArrayList<CompanyBusinessDto>();
+        return companyBusinessService.getByCompany(companyId);
     }
 
 
     @RequestMapping(value = "/",method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.OK)
-    public void save(@PathVariable BigInteger companyId, @RequestBody CompanyBusinessDto element){
+    public BigInteger save(@PathVariable BigInteger companyId){
+        CompanyBusinessDto element = new CompanyBusinessDto();
         element.setCompanyId(companyId);
+        return companyBusinessService.save(element);
+    }
+
+    @RequestMapping(value = "/{businessId}",method = RequestMethod.PUT)
+    @ResponseStatus(HttpStatus.OK)
+    public void update(@RequestBody CompanyBusinessDto element){
         companyBusinessService.save(element);
     }
 
-    public void update(@PathVariable BigInteger companyId, @PathVariable BigInteger businessId, @RequestBody CompanyBusinessDto element){
-    }
-
+    @RequestMapping(value = "/{businessId}",method = RequestMethod.DELETE)
+    @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable BigInteger companyId, @PathVariable BigInteger businessId){
+        companyBusinessService.delete(businessId);
     }
 
+    @RequestMapping(value = "/{businessId}",method = RequestMethod.GET)
     public CompanyBusinessDto get(@PathVariable BigInteger companyId, @PathVariable BigInteger businessId){
-        return new CompanyBusinessDto();
+        return companyBusinessService.get(businessId);
     }
 }

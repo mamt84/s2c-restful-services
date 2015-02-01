@@ -1,9 +1,11 @@
 package com.aguacate.send2cuba.restful.dto;
 
 import com.aguacate.send2cuba.restful.dto.BaseDto;
+import com.aguacate.send2cuba.restful.model.business.CompanyBusiness;
 import com.aguacate.send2cuba.restful.model.user.CompanyUser;
 
 import java.math.BigInteger;
+import java.util.List;
 
 /**
  * Created by maikel on 11/6/2014.
@@ -36,4 +38,5 @@ public class CompanyDto extends BaseDto {
     public void setCompanyUserId(BigInteger companyUserId) {
         this.companyUserId = companyUserId;
     }
+
 }

@@ -11,6 +11,8 @@ public class Business extends PersistentEntity {
 
     private String fullLocation;
 
+    private String address;
+
     private boolean discloseLocation;
 
     private Feedback feedback;
@@ -37,5 +39,13 @@ public class Business extends PersistentEntity {
 
     public void setFeedback(Feedback feedback) {
         this.feedback = feedback;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
