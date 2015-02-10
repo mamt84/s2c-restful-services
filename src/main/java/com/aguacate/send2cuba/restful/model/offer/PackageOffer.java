@@ -11,7 +11,7 @@ public class PackageOffer extends Offer {
     private int minimumWeight;
     private int maximumWeight;
     private Integer maxSize;
-    private boolean pickup;
+    private boolean delivery;
     private TypeDto category;
 
     private Set<TypeDto> provinces;
@@ -19,9 +19,9 @@ public class PackageOffer extends Offer {
     public PackageOffer() {
     }
 
-    public PackageOffer(Set<TypeDto> provinces, boolean pickup, Integer maxSize, int maximumWeight, int minimumWeight, TypeDto category,BigInteger id, boolean active, boolean special, String description) {
+    public PackageOffer(Set<TypeDto> provinces, boolean delivery, Integer maxSize, int maximumWeight, int minimumWeight, TypeDto category,BigInteger id, boolean active, boolean special, String description) {
         this.provinces = provinces;
-        this.pickup = pickup;
+        this.delivery = delivery;
         this.maxSize = maxSize;
         this.maximumWeight = maximumWeight;
         this.minimumWeight = minimumWeight;
@@ -57,12 +57,12 @@ public class PackageOffer extends Offer {
         this.maxSize = maxSize;
     }
 
-    public boolean isPickup() {
-        return pickup;
+    public boolean isDelivery() {
+        return delivery;
     }
 
-    public void setPickup(boolean pickup) {
-        this.pickup = pickup;
+    public void setDelivery(boolean delivery) {
+        this.delivery = delivery;
     }
 
     public Set<TypeDto> getProvinces() {

@@ -1,7 +1,5 @@
 package com.aguacate.send2cuba.restful.dto.backend;
 
-import com.aguacate.send2cuba.restful.model.offer.Offer;
-
 import java.math.BigInteger;
 import java.util.Set;
 
@@ -10,7 +8,7 @@ public class PackageOfferDto extends BaseOfferDto {
     private int minimumWeight;
     private int maximumWeight;
     private Integer maxSize;
-    private boolean pickup;
+    private boolean delivery;
     private TypeDto category;
 
     private Set<TypeDto> provinces;
@@ -18,9 +16,9 @@ public class PackageOfferDto extends BaseOfferDto {
     public PackageOfferDto() {
     }
 
-    public PackageOfferDto(Set<TypeDto> provinces, boolean pickup, Integer maxSize, int maximumWeight, int minimumWeight, TypeDto category, BigInteger id, boolean active, boolean special, String description) {
+    public PackageOfferDto(Set<TypeDto> provinces, boolean delivery, Integer maxSize, int maximumWeight, int minimumWeight, TypeDto category, BigInteger id, boolean active, boolean special, String description) {
         this.provinces = provinces;
-        this.pickup = pickup;
+        this.delivery = delivery;
         this.maxSize = maxSize;
         this.maximumWeight = maximumWeight;
         this.minimumWeight = minimumWeight;
@@ -56,14 +54,6 @@ public class PackageOfferDto extends BaseOfferDto {
         this.maxSize = maxSize;
     }
 
-    public boolean isPickup() {
-        return pickup;
-    }
-
-    public void setPickup(boolean pickup) {
-        this.pickup = pickup;
-    }
-
     public Set<TypeDto> getProvinces() {
         return provinces;
     }
@@ -79,4 +69,12 @@ public class PackageOfferDto extends BaseOfferDto {
     public void setCategory(TypeDto category) {
         this.category = category;
     }
+
+	public boolean isDelivery() {
+		return delivery;
+	}
+
+	public void setDelivery(boolean delivery) {
+		this.delivery = delivery;
+	}
 }

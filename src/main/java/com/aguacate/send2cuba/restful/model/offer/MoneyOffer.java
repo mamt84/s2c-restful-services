@@ -15,14 +15,14 @@ public class MoneyOffer extends Offer {
     private int fee;
     private int minimum;
     private int maximum;
-    private boolean pickup;
+    private boolean delivery;
 
     private Set<TypeDto> provinces;
 
     public MoneyOffer() {
     }
 
-    public MoneyOffer(String originCurrency, String targetCurrency, int fee, int minimum, int maximum, BigDecimal price, Set<TypeDto> provinces, boolean pickup, BigInteger id, boolean active, boolean special, String description) {
+    public MoneyOffer(String originCurrency, String targetCurrency, int fee, int minimum, int maximum, BigDecimal price, Set<TypeDto> provinces, boolean delivery, BigInteger id, boolean active, boolean special, String description) {
 
         this.originCurrency = originCurrency;
         this.targetCurrency = targetCurrency;
@@ -30,7 +30,7 @@ public class MoneyOffer extends Offer {
         this.minimum = minimum;
         this.maximum = maximum;
         this.provinces = provinces;
-        this.pickup = pickup;
+        this.delivery = delivery;
 
         this.setId(id);
         this.setDescription(description);
@@ -86,11 +86,11 @@ public class MoneyOffer extends Offer {
         this.provinces = provinces;
     }
 
-    public boolean isPickup() {
-        return pickup;
+    public boolean isDelivery() {
+        return delivery;
     }
 
-    public void setPickup(boolean pickup) {
-        this.pickup = pickup;
+    public void setDelivery(boolean delivery) {
+        this.delivery = delivery;
     }
 }
